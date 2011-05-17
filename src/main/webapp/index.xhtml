@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<ui:insert name="metadata"/>
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>
+        JSF 2.0 Hello World
+    </title>
+</h:head>
+<h:body>
+    <f:view>
+        <h:form>
+            <h:outputLabel for="greeter" value="Please tell me your name:"/>
+            <h:inputText id="greeter" value="#{greeter.name}">
+                <f:ajax event="keyup" render="text"/>
+            </h:inputText>
+        </h:form>
+        <h:outputText id="text" value="${greeter.response}"/>
+    </f:view>
+</h:body>
+</html>
